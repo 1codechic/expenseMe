@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @categories = Categories.all
+    @categories = Category.all
     render json: @categories
   end
 end
