@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  resources :expenses
-  resources :categories
+  
+  namespace :api do
+    resources :expenses
+    resources :categories
+  end
+
+  root to: "home#'index'
+
+
   # EXAMPLE HTML ROUTE
   # get "/photos" => "photos#index"
 
