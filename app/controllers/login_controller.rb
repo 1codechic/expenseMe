@@ -24,7 +24,7 @@ class LoginController < ApplicationController
  #logout method
   def destroy
     session = JWTSessions::Session.new(payload: payload)
-    session.flush_by_by_access_payload
+    session.flush_by_access_payload
     render json: :ok
   end
 
