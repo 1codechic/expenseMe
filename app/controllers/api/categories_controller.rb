@@ -1,5 +1,6 @@
 module Api
   class CategoriesController < ApplicationController
+    before_action :authorize_access_request, except: [:show, :index]
     before_action :set_category, only: [:show, :update, :destroy]
 
     # GET /categories
@@ -47,7 +48,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def category_params
-        params.require(:category).permit(:name, :user_id)
+        params.require(:category).permit(:name)
       end
   end
 end

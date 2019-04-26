@@ -1,10 +1,11 @@
 module Api
   class ExpensesController < ApplicationController
+    before_action :authorize_access_request
     before_action :set_expense, only: [:show, :update, :destroy]
 
     # GET /expenses
     def index
-      @expenses = Expense.all
+      @expenses = current_user.expenses.all
 
       render json: @expenses
     end
@@ -16,7 +17,7 @@ module Api
 
     # POST /expenses
     def create
-      @expense = Expense.new(expense_params)
+      @expense = current_user.Expense.new(expense_params)
 
       if @expense.save
         render json: @expense, status: :created, location: @expense
@@ -42,12 +43,12 @@ module Api
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_expense
-        @expense = Expense.find(params[:id])
+        @expense = current_user.Expense.find(params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
       def expense_params
-        params.require(:expense).permit(:date, :description, :amount, :category_id, :user_id)
+        params.require(:expense).permit(:date, :description, :amount, :category_id)
       end
   end
 end
