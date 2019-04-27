@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   post '/signup' => 'singup#create'
   delete '/login' => 'login#destroy' 
 
+  # post "refresh", controller: :refresh, action: :create
+  # post "login", controller: :login, action: :create
+  # post "signup", controller: :signup, action: :create
+  # delete "signin", controller: :signin, action: :destroy
 
   # EXAMPLE HTML ROUTE
   # get "/photos" => "photos#index"
