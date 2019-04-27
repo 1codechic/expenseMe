@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   post '/refresh' => 'refresh#create'
   post '/login' => 'login#create'
-  post '/signup' => 'singup#create'
+  # post '/signup' => 'signup#create'
+  post '/sessions' => 'sessions#create'
   delete '/login' => 'login#destroy' 
 
   # post "refresh", controller: :refresh, action: :create
