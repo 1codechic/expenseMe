@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete '/signin' => 'signin#destroy' 
 
   # post "refresh", controller: :refresh, action: :create
-  # post "login", controller: :login, action: :create
+  # post "signin", controller: :signin, action: :create
   # post "signup", controller: :signup, action: :create
   # delete "signin", controller: :signin, action: :destroy
 
