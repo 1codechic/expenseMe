@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   post '/refresh' => 'refresh#create'
-  post '/login' => 'login#create'
-  # post '/signup' => 'signup#create'
-  post '/sessions' => 'sessions#create'
-  delete '/login' => 'login#destroy' 
+  post '/signin' => 'signin#create'
+  post '/signup' => 'signup#create'
+  delete '/signin' => 'signin#destroy' 
 
   # post "refresh", controller: :refresh, action: :create
   # post "login", controller: :login, action: :create
